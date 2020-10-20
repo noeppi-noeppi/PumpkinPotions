@@ -7,6 +7,7 @@ import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.Direction;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.util.LazyOptional;
+import pumpkinpotions.network.PumpkinNetwork;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -36,6 +37,21 @@ public class TileEntityBase extends TileEntity {
             return LazyOptional.of(() -> (T) this);
         } else {
             return super.getCapability(cap, side);
+        }
+    }
+
+    @Override
+    public void markDirty() {
+        super.markDirty();
+        if (world != null && !world.isRemote) {
+            PumpkinNetwork.updateTE(world, pos);
+        }
+    }
+
+    @Override
+    public void onLoad() {
+        if (world != null && world.isRemote) {
+            PumpkinNetwork.requestTE(world, pos);
         }
     }
 }

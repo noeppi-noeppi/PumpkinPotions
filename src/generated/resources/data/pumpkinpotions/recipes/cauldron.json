@@ -1,0 +1,66 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "pumpkinpotions:cauldron",
+  "pattern": [
+    "spo",
+    "oky",
+    "jam"
+  ],
+  "key": {
+    "s": {
+      "tag": "forge:nuggets/iron"
+    },
+    "p": {
+      "item": "minecraft:nether_wart"
+    },
+    "o": {
+      "tag": "forge:nuggets/iron"
+    },
+    "k": {
+      "item": "minecraft:carved_pumpkin"
+    },
+    "y": {
+      "tag": "forge:nuggets/iron"
+    },
+    "j": [
+      {
+        "item": "minecraft:oak_log"
+      },
+      {
+        "item": "minecraft:acacia_log"
+      },
+      {
+        "item": "minecraft:birch_log"
+      },
+      {
+        "item": "minecraft:dark_oak_log"
+      },
+      {
+        "item": "minecraft:jungle_log"
+      }
+    ],
+    "a": {
+      "item": "minecraft:blaze_powder"
+    },
+    "m": [
+      {
+        "item": "minecraft:oak_log"
+      },
+      {
+        "item": "minecraft:acacia_log"
+      },
+      {
+        "item": "minecraft:birch_log"
+      },
+      {
+        "item": "minecraft:dark_oak_log"
+      },
+      {
+        "item": "minecraft:jungle_log"
+      }
+    ]
+  },
+  "result": {
+    "item": "pumpkinpotions:cauldron"
+  }
+}

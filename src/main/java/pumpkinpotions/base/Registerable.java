@@ -30,7 +30,7 @@ public interface Registerable {
      * Do stuff needed on the client
      */
     @OnlyIn(Dist.CLIENT)
-    default void registerClient(@SuppressWarnings("unused") String id) {
+    default void registerClient(String id) {
 
     }
 }

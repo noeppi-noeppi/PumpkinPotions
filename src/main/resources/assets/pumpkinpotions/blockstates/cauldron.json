@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "pumpkinpotions:block/cauldron"
+    },
+    "facing=south": {
+      "model": "pumpkinpotions:block/cauldron",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "pumpkinpotions:block/cauldron",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "pumpkinpotions:block/cauldron",
+      "y": 90
+    }
+  }
+}

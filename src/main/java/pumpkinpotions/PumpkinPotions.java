@@ -25,6 +25,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.commons.lang3.tuple.Pair;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import pumpkinpotions.network.PumpkinNetwork;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,7 +40,7 @@ public class PumpkinPotions {
     public static final ItemGroup TAB = new ItemGroup(MODID) {
         @Override
         public ItemStack createIcon() {
-            return new ItemStack(Items.BARRIER);
+            return new ItemStack(ModBlocks.cauldron);
         }
     };
 
@@ -56,12 +57,14 @@ public class PumpkinPotions {
     }
 
     private static void register() {
-        ModItems.register();
         ModBlocks.register();
+        ModItems.register();
+        ModEffects.register();
     }
 
     private void setup(final FMLCommonSetupEvent event) {
         LOGGER.info("Loading PumpkinPotions v" + VERSION);
+        PumpkinNetwork.registerPackets();
     }
 
     private void clientSetup(final FMLClientSetupEvent event) {

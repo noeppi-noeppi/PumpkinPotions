@@ -1,0 +1,23 @@
+{
+  "block.pumpkinpotions.cauldron": "Pumpkin Cauldron",
+
+  "effect.pumpkinpotions.mob_dizziness": "Mob Dizziness",
+  "effect.pumpkinpotions.ghost": "Ghost",
+  "effect.pumpkinpotions.confusion": "Confusion",
+  "effect.pumpkinpotions.golem_aggression": "Golem Aggression",
+  "effect.pumpkinpotions.random_teleport": "Enderman",
+  "effect.pumpkinpotions.projectile_resistance": "Projectile Resistance",
+  "effect.pumpkinpotions.deadly_aura": "Deadly Aura",
+  "effect.pumpkinpotions.knockback_resistance": "Knockback Resistance",
+  "effect.pumpkinpotions.knockback_boost": "Knockback Boost",
+  "effect.pumpkinpotions.xp_boost": "XP Boost",
+
+  "death.pumpkinpotions.aura_damage.self": "%s died from an aura.",
+  "death.pumpkinpotions.aura_damage.other": "%s died from %s's aura.",
+
+  "item.pumpkinpotions.potion": "Halloween Potion",
+  "item.pumpkinpotions.splash_potion": "Halloween Splash Potion",
+  "item.pumpkinpotions.lingering_potion": "Halloween Lingering Potion",
+
+  "pumpkinpotions.itshalloween": "It's Halloween!!!"
+}

@@ -5,6 +5,7 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import pumpkinpotions.ModBlocks;
 import pumpkinpotions.PumpkinPotions;
 
 import javax.annotation.Nonnull;
@@ -29,7 +30,7 @@ public class BlockStateProvider extends net.minecraftforge.client.model.generato
                 .filter(b -> PumpkinPotions.MODID.equals(Registry.BLOCK.getKey(b).getNamespace()))
                 .collect(Collectors.toSet());
 
-        //manualModel(remainingBlocks, ModBlocks.manaInfuser);
+       remainingBlocks.remove(ModBlocks.cauldron);
 
         remainingBlocks.forEach(this::defaultBlock);
     }

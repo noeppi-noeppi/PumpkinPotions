@@ -1,0 +1,23 @@
+{
+  "block.pumpkinpotions.cauldron": "Kürbiskessel",
+
+  "effect.pumpkinpotions.mob_dizziness": "Kreaturen-Sehschwäche",
+  "effect.pumpkinpotions.ghost": "Geist",
+  "effect.pumpkinpotions.confusion": "Verwirrung",
+  "effect.pumpkinpotions.golem_aggression": "Fein des Golmes",
+  "effect.pumpkinpotions.random_teleport": "Enderman",
+  "effect.pumpkinpotions.projectile_resistance": "Projektilschutz",
+  "effect.pumpkinpotions.deadly_aura": "Tödliche Aura",
+  "effect.pumpkinpotions.knockback_resistance": "Standfestigkeit",
+  "effect.pumpkinpotions.knockback_boost": "Rückschlag",
+  "effect.pumpkinpotions.xp_boost": "Mehr Erfahrung",
+
+  "death.pumpkinpotions.aura_damage.self": "%s starb durch eine Aura.",
+  "death.pumpkinpotions.aura_damage.other": "%s starb durch die tödliche Aura von %s.",
+
+  "item.pumpkinpotions.potion": "Halloween-Trank",
+  "item.pumpkinpotions.splash_potion": "Werfbarer Halloween-Trank",
+  "item.pumpkinpotions.lingering_potion": "Verweilender Halloween-Trank",
+
+  "pumpkinpotions.itshalloween": "Es ist Halloween!!!"
+}
