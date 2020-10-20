@@ -26,16 +26,18 @@ public class BlockStateProvider extends net.minecraftforge.client.model.generato
 
     @Override
     protected void registerStatesAndModels() {
+        @SuppressWarnings("deprecation")
         Set<Block> remainingBlocks = Registry.BLOCK.stream()
                 .filter(b -> PumpkinPotions.MODID.equals(Registry.BLOCK.getKey(b).getNamespace()))
                 .collect(Collectors.toSet());
 
-       remainingBlocks.remove(ModBlocks.cauldron);
+        remainingBlocks.remove(ModBlocks.cauldron);
 
         remainingBlocks.forEach(this::defaultBlock);
     }
 
     private void manualModel(Set<Block> blocks, Block b) {
+        @SuppressWarnings("deprecation")
         String name = Registry.BLOCK.getKey(b).getPath();
         simpleBlock(b, models().getExistingFile(new ResourceLocation(PumpkinPotions.MODID, "block/" + name)));
         blocks.remove(b);

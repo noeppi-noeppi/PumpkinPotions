@@ -11,4 +11,5 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.CLASS)
 @Documented
 public @interface KeepConstructor {
+
 }

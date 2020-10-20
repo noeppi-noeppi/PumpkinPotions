@@ -96,10 +96,10 @@ public class RenderCauldron extends TileEntityRenderer<TileCauldron> {
         Matrix3f normal = matrixStack.getLast().getNormal();
 
         IVertexBuilder vertex = buffer.getBuffer(RenderType.getTranslucentNoCrumbling());
-        vertex.pos(model, 2/16f, 0, 14/16f).color(b12.getLeft(), b12.getMiddle(), b12.getRight(), alpha).tex(sprite.getInterpolatedU(0), sprite.getInterpolatedV(16)).overlay(OverlayTexture.NO_OVERLAY).lightmap(light).normal(normal, 1, 0, 0).endVertex();
-        vertex.pos(model, 14/16f, 0, 14/16f).color(b23.getLeft(), b23.getMiddle(), b23.getRight(), alpha).tex(sprite.getInterpolatedU(16), sprite.getInterpolatedV(16)).overlay(OverlayTexture.NO_OVERLAY).lightmap(light).normal(normal, 1, 0, 0).endVertex();
-        vertex.pos(model, 14/16f, 0, 2/16f).color(b34.getLeft(), b34.getMiddle(), b34.getRight(), alpha).tex(sprite.getInterpolatedU(16), sprite.getInterpolatedV(0)).overlay(OverlayTexture.NO_OVERLAY).lightmap(light).normal(normal, 1, 0, 0).endVertex();
-        vertex.pos(model, 2/16f, 0, 2/16f).color(b41.getLeft(), b41.getMiddle(), b41.getRight(), alpha).tex(sprite.getInterpolatedU(0), sprite.getInterpolatedV(0)).overlay(OverlayTexture.NO_OVERLAY).lightmap(light).normal(normal, 1, 0, 0).endVertex();
+        vertex.pos(model, 2 / 16f, 0, 14 / 16f).color(b12.getLeft(), b12.getMiddle(), b12.getRight(), alpha).tex(sprite.getInterpolatedU(0), sprite.getInterpolatedV(16)).overlay(OverlayTexture.NO_OVERLAY).lightmap(light).normal(normal, 1, 0, 0).endVertex();
+        vertex.pos(model, 14 / 16f, 0, 14 / 16f).color(b23.getLeft(), b23.getMiddle(), b23.getRight(), alpha).tex(sprite.getInterpolatedU(16), sprite.getInterpolatedV(16)).overlay(OverlayTexture.NO_OVERLAY).lightmap(light).normal(normal, 1, 0, 0).endVertex();
+        vertex.pos(model, 14 / 16f, 0, 2 / 16f).color(b34.getLeft(), b34.getMiddle(), b34.getRight(), alpha).tex(sprite.getInterpolatedU(16), sprite.getInterpolatedV(0)).overlay(OverlayTexture.NO_OVERLAY).lightmap(light).normal(normal, 1, 0, 0).endVertex();
+        vertex.pos(model, 2 / 16f, 0, 2 / 16f).color(b41.getLeft(), b41.getMiddle(), b41.getRight(), alpha).tex(sprite.getInterpolatedU(0), sprite.getInterpolatedV(0)).overlay(OverlayTexture.NO_OVERLAY).lightmap(light).normal(normal, 1, 0, 0).endVertex();
     }
 
     private void renderLectern(MatrixStack matrixStack, IRenderTypeBuffer buffer, TileCauldron tile, LecternTileEntity lectern, float partialTicks, int light) {
@@ -210,7 +210,7 @@ public class RenderCauldron extends TileEntityRenderer<TileCauldron> {
         float ticks = Minecraft.getInstance().player.ticksExisted + partialTicks;
 
         matrixStack.push();
-        matrixStack.translate(0.5,  1.25 + (open * 0.2), 0.5);
+        matrixStack.translate(0.5, 1.25 + (open * 0.2), 0.5);
         matrixStack.rotate(Vector3f.YP.rotationDegrees(ticks));
         matrixStack.scale(1.2f, 1.2f, 1.2f);
         matrixStack.scale(open, open, open);

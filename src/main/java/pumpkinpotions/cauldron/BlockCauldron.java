@@ -133,6 +133,7 @@ public class BlockCauldron extends BlockTE<TileCauldron> {
 
     @Nonnull
     @Override
+    @SuppressWarnings("deprecation")
     public VoxelShape getShape(@Nonnull BlockState state, @Nonnull IBlockReader world, @Nonnull BlockPos pos, @Nonnull ISelectionContext context) {
         return SHAPE.getShape(state.get(BlockStateProperties.HORIZONTAL_FACING));
     }

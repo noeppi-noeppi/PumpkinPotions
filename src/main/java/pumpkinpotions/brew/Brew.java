@@ -276,7 +276,7 @@ public class Brew {
                     .both(Affinity.COLD, -0.5, 0.5)
                     .both(Affinity.HOT, 0.5, -0.5)
             ))
-            .put(ModEffects.randomTeleport, new BrewData(null ,9, 20 * 60 * 3, Items.ENDER_PEARL, AffinityTable.builder()
+            .put(ModEffects.randomTeleport, new BrewData(null, 9, 20 * 60 * 3, Items.ENDER_PEARL, AffinityTable.builder()
                     .amplifier(Affinity.END, 1)
                     .amplifier(Affinity.WATER, -1)
                     .duration(Affinity.FIRE, 1)
@@ -363,6 +363,7 @@ public class Brew {
             if (EFFECT_ITEMS.contains(item)) {
                 if (current != null) {
                     effects.add(alignment.finishEffect(current, data, duration, amplifier));
+                    //noinspection UnusedAssignment
                     current = null;
                 }
                 current = EFFECT_DATA.entrySet().stream().filter(entry -> entry.getValue().item == item)
@@ -390,6 +391,7 @@ public class Brew {
         }
         if (current != null) {
             effects.add(alignment.finishEffect(current, data, duration, amplifier));
+            //noinspection UnusedAssignment
             current = null;
         }
 
@@ -424,7 +426,7 @@ public class Brew {
             }
         } else if ((EFFECT_ITEMS.contains(stack.getItem()))
                 || (ItemBrew.EFFECT_DATA.containsKey(stack.getItem())
-                    && items.stream().map(ItemStack::getItem).anyMatch(EFFECT_ITEMS::contains))) {
+                && items.stream().map(ItemStack::getItem).anyMatch(EFFECT_ITEMS::contains))) {
             return !hasItem(stack.getItem(), items);
         } else {
             return false;

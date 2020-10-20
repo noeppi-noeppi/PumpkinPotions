@@ -3,13 +3,13 @@ package pumpkinpotions.render;
 import com.google.common.collect.ImmutableList;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.IVertexBuilder;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.AbstractGui;
-import net.minecraft.client.renderer.*;
+import net.minecraft.client.renderer.BufferBuilder;
+import net.minecraft.client.renderer.IRenderTypeBuffer;
+import net.minecraft.client.renderer.Tessellator;
+import net.minecraft.client.renderer.WorldVertexBufferUploader;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.inventory.container.PlayerContainer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.vector.Matrix3f;
 import net.minecraft.util.math.vector.Matrix4f;
@@ -63,6 +63,7 @@ public class RuneRender {
             vertex.pos(model, -0.1f, -0.1f, 0).color(1, 1, 1, 1).tex(coordinates.getLeft(), coordinates.getRight()).overlay(overlay).lightmap(15728880).normal(normal, 1.0F, 0.0F, 0.0F).endVertex();
             vertex.finishDrawing();
 
+            //noinspection deprecation
             RenderSystem.enableAlphaTest();
             WorldVertexBufferUploader.draw(vertex);
 
@@ -79,6 +80,7 @@ public class RuneRender {
             vertex.pos(model, -size, -size, 0).color(1, 1, 1, 1).tex(coordinates.getLeft(), coordinates.getRight()).overlay(overlay).lightmap(15728880).normal(normal, 1.0F, 0.0F, 0.0F).endVertex();
             vertex.finishDrawing();
 
+            //noinspection deprecation
             RenderSystem.enableAlphaTest();
             WorldVertexBufferUploader.draw(vertex);
 

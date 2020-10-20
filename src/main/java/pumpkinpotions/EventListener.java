@@ -4,7 +4,6 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.IRenderTypeBuffer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.client.renderer.tileentity.LecternTileEntityRenderer;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.passive.GolemEntity;
 import net.minecraft.entity.passive.TameableEntity;
@@ -16,7 +15,6 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.world.storage.IWorldInfo;
 import net.minecraft.world.storage.ServerWorldInfo;
 import net.minecraftforge.client.event.InputUpdateEvent;
-import net.minecraftforge.client.event.RenderBlockOverlayEvent;
 import net.minecraftforge.client.event.RenderLivingEvent;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
@@ -72,9 +70,7 @@ public class EventListener {
 
             EffectUtil.whenEffect(player, ModEffects.golemAggression, (effect, level) -> {
                 int radius = 2 * (level + 1);
-                player.getEntityWorld().getEntitiesWithinAABB(GolemEntity.class, new AxisAlignedBB(player.getPosX() - radius, player.getPosY() - radius, player.getPosZ() - radius, player.getPosX() + radius, player.getPosY() + radius, player.getPosZ() + radius)).forEach(golem -> {
-                    golem.setAttackTarget(player);
-                });
+                player.getEntityWorld().getEntitiesWithinAABB(GolemEntity.class, new AxisAlignedBB(player.getPosX() - radius, player.getPosY() - radius, player.getPosZ() - radius, player.getPosX() + radius, player.getPosY() + radius, player.getPosZ() + radius)).forEach(golem -> golem.setAttackTarget(player));
             });
         }
     }
@@ -124,7 +120,7 @@ public class EventListener {
     @SubscribeEvent
     public void xpPickup(PlayerXpEvent.PickupXp event) {
         EffectUtil.whenEffect(event.getPlayer(), ModEffects.xpBoost, (effect, level) -> {
-            double factor =  1 + ((level + 1) / 3d);
+            double factor = 1 + ((level + 1) / 3d);
             event.getOrb().xpValue = (int) Math.round(event.getOrb().xpValue * factor);
         });
     }

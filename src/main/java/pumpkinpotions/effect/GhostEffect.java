@@ -24,7 +24,7 @@ public class GhostEffect extends Effect {
     }
 
     @Override
-    public void removeAttributesModifiersFromEntity(@Nonnull LivingEntity entity, AttributeModifierManager attributes, int amplifier) {
+    public void removeAttributesModifiersFromEntity(@Nonnull LivingEntity entity, @Nonnull AttributeModifierManager attributes, int amplifier) {
         super.removeAttributesModifiersFromEntity(entity, attributes, amplifier);
         if (!entity.getEntityWorld().isRemote && entity instanceof PlayerEntity) {
             updateEffect(false, (PlayerEntity) entity);

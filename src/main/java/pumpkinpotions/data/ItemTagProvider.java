@@ -19,40 +19,42 @@ import pumpkinpotions.PumpkinPotions;
 import javax.annotation.Nonnull;
 
 public class ItemTagProvider extends ItemTagsProvider {
-	public ItemTagProvider(DataGenerator generatorIn, BlockTagProvider blockTagProvider) {
-		super(generatorIn, blockTagProvider);
-	}
 
-	@Nonnull
-	@Override
-	public String getName() {
-		return "PumpkinPotions item tags";
-	}
+    public ItemTagProvider(DataGenerator generatorIn, BlockTagProvider blockTagProvider) {
+        //noinspection deprecation
+        super(generatorIn, blockTagProvider);
+    }
 
-	@Override
-	protected void registerTags() {
+    @Nonnull
+    @Override
+    public String getName() {
+        return "PumpkinPotions item tags";
+    }
 
-		//noinspection deprecation
-		Registry.ITEM.stream()
-				.filter(i -> PumpkinPotions.MODID.equals(Registry.ITEM.getKey(i).getNamespace()))
-				.filter(i -> !(i instanceof BlockItem))
-				.forEach(this::addDefaultItemTag);
+    @Override
+    protected void registerTags() {
 
-		//noinspection deprecation
-		Registry.ITEM.stream()
-				.filter(i -> PumpkinPotions.MODID.equals(Registry.ITEM.getKey(i).getNamespace()))
-				.filter(i -> i instanceof BlockItem)
-				.map(i -> ((BlockItem) i).getBlock())
-				.forEach(this::addDefaultBlockItemTag);
+        //noinspection deprecation
+        Registry.ITEM.stream()
+                .filter(i -> PumpkinPotions.MODID.equals(Registry.ITEM.getKey(i).getNamespace()))
+                .filter(i -> !(i instanceof BlockItem))
+                .forEach(this::addDefaultItemTag);
 
-		//this.func_240522_a_(ModTags.Items.SHEARS).func_240534_a_(ModItems.elementiumShears, ModItems.manasteelShears);
-	}
+        //noinspection deprecation
+        Registry.ITEM.stream()
+                .filter(i -> PumpkinPotions.MODID.equals(Registry.ITEM.getKey(i).getNamespace()))
+                .filter(i -> i instanceof BlockItem)
+                .map(i -> ((BlockItem) i).getBlock())
+                .forEach(this::addDefaultBlockItemTag);
 
-	public void addDefaultItemTag(Item item) {
-		//this.getOrCreateBuilder(ModTags.Items.RUNES).add(item);
-	}
+        //this.func_240522_a_(ModTags.Items.SHEARS).func_240534_a_(ModItems.elementiumShears, ModItems.manasteelShears);
+    }
 
-	public void addDefaultBlockItemTag(Block block) {
-		//this.getOrCreateBuilder(ModTags.Items.SPECIAL_FLOWERS).add(block.asItem());
-	}
+    public void addDefaultItemTag(Item item) {
+        //this.getOrCreateBuilder(ModTags.Items.RUNES).add(item);
+    }
+
+    public void addDefaultBlockItemTag(Block block) {
+        //this.getOrCreateBuilder(ModTags.Items.SPECIAL_FLOWERS).add(block.asItem());
+    }
 }

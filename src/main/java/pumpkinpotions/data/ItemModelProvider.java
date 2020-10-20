@@ -24,73 +24,75 @@ import java.util.stream.Collectors;
 
 public class ItemModelProvider extends net.minecraftforge.client.model.generators.ItemModelProvider {
 
-	private final Set<Item> handheld = new HashSet<>();
+    private final Set<Item> handheld = new HashSet<>();
 
-	public ItemModelProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
-		super(generator, PumpkinPotions.MODID, existingFileHelper);
-	}
+    public ItemModelProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
+        super(generator, PumpkinPotions.MODID, existingFileHelper);
+    }
 
-	@Nonnull
-	@Override
-	public String getName() {
-		return "PumpkinPotions item models";
-	}
+    @Nonnull
+    @Override
+    public String getName() {
+        return "PumpkinPotions item models";
+    }
 
-	@Override
-	protected void registerModels() {
-		Set<Item> items = Registry.ITEM.stream().filter(i -> PumpkinPotions.MODID.equals(Registry.ITEM.getKey(i).getNamespace()))
-				.collect(Collectors.toSet());
-		registerItemBlocks(items.stream().filter(i -> i instanceof BlockItem).map(i -> (BlockItem) i).collect(Collectors.toSet()));
-		registerItems(items.stream().filter(i -> !(i instanceof BlockItem)).collect(Collectors.toSet()));
-	}
+    @Override
+    protected void registerModels() {
+        @SuppressWarnings("deprecation")
+        Set<Item> items = Registry.ITEM.stream().filter(i -> PumpkinPotions.MODID.equals(Registry.ITEM.getKey(i).getNamespace()))
+                .collect(Collectors.toSet());
+        registerItemBlocks(items.stream().filter(i -> i instanceof BlockItem).map(i -> (BlockItem) i).collect(Collectors.toSet()));
+        registerItems(items.stream().filter(i -> !(i instanceof BlockItem)).collect(Collectors.toSet()));
+    }
 
-	private static String name(Item i) {
-		return Registry.ITEM.getKey(i).getPath();
-	}
+    private static String name(Item i) {
+        //noinspection deprecation
+        return Registry.ITEM.getKey(i).getPath();
+    }
 
-	private static final ResourceLocation GENERATED = new ResourceLocation("item/generated");
-	private static final ResourceLocation HANDHELD = new ResourceLocation("item/handheld");
+    private static final ResourceLocation GENERATED = new ResourceLocation("item/generated");
+    private static final ResourceLocation HANDHELD = new ResourceLocation("item/handheld");
 
-	private ItemModelBuilder handheldItem(String name) {
-		return withExistingParent(name, HANDHELD)
-				.texture("layer0", new ResourceLocation(PumpkinPotions.MODID, "item/" + name));
-	}
+    private ItemModelBuilder handheldItem(String name) {
+        return withExistingParent(name, HANDHELD)
+                .texture("layer0", new ResourceLocation(PumpkinPotions.MODID, "item/" + name));
+    }
 
-	@SuppressWarnings("UnusedReturnValue")
-	private ItemModelBuilder handheldItem(Item i) {
-		handheld.add(i);
-		return handheldItem(name(i));
-	}
+    @SuppressWarnings("UnusedReturnValue")
+    private ItemModelBuilder handheldItem(Item i) {
+        handheld.add(i);
+        return handheldItem(name(i));
+    }
 
-	private ItemModelBuilder generatedItem(String name) {
-		return withExistingParent(name, GENERATED)
-				.texture("layer0", new ResourceLocation(PumpkinPotions.MODID, "item/" + name));
-	}
+    private ItemModelBuilder generatedItem(String name) {
+        return withExistingParent(name, GENERATED)
+                .texture("layer0", new ResourceLocation(PumpkinPotions.MODID, "item/" + name));
+    }
 
-	@SuppressWarnings("UnusedReturnValue")
-	private ItemModelBuilder generatedItem(Item i) {
-		return generatedItem(name(i));
-	}
+    @SuppressWarnings("UnusedReturnValue")
+    private ItemModelBuilder generatedItem(Item i) {
+        return generatedItem(name(i));
+    }
 
-	private void registerItems(Set<Item> items) {
+    private void registerItems(Set<Item> items) {
 
-		//handheldItem(ModItems.alfsteelSword);
-		//items.remove(ModItems.alfsteelPick);
+        //handheldItem(ModItems.alfsteelSword);
+        //items.remove(ModItems.alfsteelPick);
 
-		items.forEach(item -> {
-			if (!(item instanceof BlockItem) && !handheld.contains(item)) {
-				generatedItem(item);
-			}
-		});
-	}
+        items.forEach(item -> {
+            if (!(item instanceof BlockItem) && !handheld.contains(item)) {
+                generatedItem(item);
+            }
+        });
+    }
 
-	private void registerItemBlocks(Set<BlockItem> itemBlocks) {
-		//itemBlocks.remove(ModBlocks.alfsteelPylon.asItem());
+    private void registerItemBlocks(Set<BlockItem> itemBlocks) {
+        //itemBlocks.remove(ModBlocks.alfsteelPylon.asItem());
 
-		itemBlocks.forEach(i -> {
-			@SuppressWarnings("deprecation")
-			String name = Registry.ITEM.getKey(i).getPath();
-			getBuilder(name).parent(new AlwaysExistentModelFile(new ResourceLocation(PumpkinPotions.MODID, "block/" + name)));
-		});
-	}
+        itemBlocks.forEach(i -> {
+            @SuppressWarnings("deprecation")
+            String name = Registry.ITEM.getKey(i).getPath();
+            getBuilder(name).parent(new AlwaysExistentModelFile(new ResourceLocation(PumpkinPotions.MODID, "block/" + name)));
+        });
+    }
 }

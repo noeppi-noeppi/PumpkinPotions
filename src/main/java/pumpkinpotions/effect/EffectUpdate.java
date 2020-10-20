@@ -18,7 +18,7 @@ public class EffectUpdate {
             double y = entity.getPosY();
             double z = entity.getPosZ();
 
-            for(int i = 0; i < 16; ++i) {
+            for (int i = 0; i < 16; ++i) {
                 double d3 = x + (random.nextDouble() - 0.5) * 16;
                 double d4 = MathHelper.clamp(y + (random.nextInt(16) - 8), 0.0D, entity.world.func_234938_ad_() - 1);
                 double d5 = z + (random.nextDouble() - 0.5) * 16;

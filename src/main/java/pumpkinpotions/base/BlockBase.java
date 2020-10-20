@@ -1,10 +1,10 @@
 package pumpkinpotions.base;
 
 import com.google.common.collect.ImmutableSet;
-import pumpkinpotions.PumpkinPotions;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import pumpkinpotions.PumpkinPotions;
 
 import java.util.Set;
 

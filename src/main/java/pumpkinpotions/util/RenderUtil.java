@@ -13,8 +13,8 @@ public class RenderUtil {
         float g2 = ((rgb2 >>> 8) & 0xFF) / 255f;
         float b2 = (rgb2 & 0xFF) / 255f;
 
-        return Triple.of(r1 * (1-spread) + r2 * spread,
-                g1 * (1-spread) + g2 * spread,
-                b1 * (1-spread) + b2 * spread);
+        return Triple.of(r1 * (1 - spread) + r2 * spread,
+                g1 * (1 - spread) + g2 * spread,
+                b1 * (1 - spread) + b2 * spread);
     }
 }

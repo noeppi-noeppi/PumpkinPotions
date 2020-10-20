@@ -1,7 +1,7 @@
 package pumpkinpotions.base;
 
-import pumpkinpotions.PumpkinPotions;
 import net.minecraft.item.Item;
+import pumpkinpotions.PumpkinPotions;
 
 public class ItemBase extends Item {
 

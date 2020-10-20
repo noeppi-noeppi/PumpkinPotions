@@ -6,8 +6,8 @@ import net.minecraft.item.Items;
 
 import java.util.Map;
 
-import static pumpkinpotions.brew.ItemAffinities.*;
 import static pumpkinpotions.brew.Affinity.*;
+import static pumpkinpotions.brew.ItemAffinities.*;
 
 public class ItemBrew {
 

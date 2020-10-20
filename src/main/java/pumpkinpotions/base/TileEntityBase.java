@@ -1,12 +1,12 @@
 package pumpkinpotions.base;
 
 import com.google.common.collect.ImmutableSet;
-import pumpkinpotions.annotation.KeepConstructor;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.Direction;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.util.LazyOptional;
+import pumpkinpotions.annotation.KeepConstructor;
 import pumpkinpotions.network.PumpkinNetwork;
 
 import javax.annotation.Nonnull;

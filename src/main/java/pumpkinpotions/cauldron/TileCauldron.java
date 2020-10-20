@@ -1,8 +1,6 @@
 package pumpkinpotions.cauldron;
 
 import net.minecraft.block.BlockState;
-import net.minecraft.block.BubbleColumnBlock;
-import net.minecraft.block.CauldronBlock;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.passive.BatEntity;
@@ -19,7 +17,6 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.AxisAlignedBB;
-import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraftforge.common.util.Constants;
 import net.minecraftforge.fluids.FluidAttributes;
