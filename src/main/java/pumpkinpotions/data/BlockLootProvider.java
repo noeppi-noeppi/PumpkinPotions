@@ -36,9 +36,6 @@ public class BlockLootProvider implements IDataProvider {
 
     public BlockLootProvider(DataGenerator generator) {
         this.generator = generator;
-
-        //functionTable.put(ModBlocks.bifrost, BlockLootProvider::empty);
-        //functionTable.put(ModBlocks.enchanter, b -> genRegular(Blocks.LAPIS_BLOCK));
     }
 
     @Nonnull
@@ -70,22 +67,6 @@ public class BlockLootProvider implements IDataProvider {
 
     private static Path getPath(Path root, ResourceLocation id) {
         return root.resolve("data/" + id.getNamespace() + "/loot_tables/blocks/" + id.getPath() + ".json");
-    }
-
-    private static LootTable.Builder empty(Block b) {
-        return LootTable.builder();
-    }
-
-    private static LootTable.Builder genCopyNbt(Block b, String... tags) {
-        LootEntry.Builder<?> entry = ItemLootEntry.builder(b);
-        CopyNbt.Builder func = CopyNbt.builder(CopyNbt.Source.BLOCK_ENTITY);
-        for (String tag : tags) {
-            func = func.replaceOperation(tag, "BlockEntityTag." + tag);
-        }
-        LootPool.Builder pool = LootPool.builder().name("main").rolls(ConstantRange.of(1)).addEntry(entry)
-                .acceptCondition(SurvivesExplosion.builder())
-                .acceptFunction(func);
-        return LootTable.builder().addLootPool(pool);
     }
 
     private static LootTable.Builder genRegular(Block b) {

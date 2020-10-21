@@ -1,7 +1,7 @@
 modLoader="javafml"
 loaderVersion="[32,)"
 license="APACHE-2.0"
-issueTrackerURL="http://placeholder.invalid"
+issueTrackerURL="https://github.com/noeppi-noeppi/PumpkinPotions/issues"
 
 [[mods]]
 modId="pumpkinpotions"
@@ -10,7 +10,7 @@ displayName="PumpkinPotions"
 displayURL="http://placeholder.invalid"
 authors="noeppi_noeppi"
 description='''
-Dive deeper into the world of botania.
+Brew complex potions in a pumpkin
 '''
 
 [[dependencies.pumpkinpotions]]
