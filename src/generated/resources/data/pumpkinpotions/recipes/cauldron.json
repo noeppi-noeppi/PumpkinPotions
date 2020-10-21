@@ -22,43 +22,15 @@
     "y": {
       "tag": "forge:nuggets/iron"
     },
-    "j": [
-      {
-        "item": "minecraft:oak_log"
-      },
-      {
-        "item": "minecraft:acacia_log"
-      },
-      {
-        "item": "minecraft:birch_log"
-      },
-      {
-        "item": "minecraft:dark_oak_log"
-      },
-      {
-        "item": "minecraft:jungle_log"
-      }
-    ],
+    "j": {
+      "tag": "minecraft:logs"
+    },
     "a": {
       "item": "minecraft:blaze_powder"
     },
-    "m": [
-      {
-        "item": "minecraft:oak_log"
-      },
-      {
-        "item": "minecraft:acacia_log"
-      },
-      {
-        "item": "minecraft:birch_log"
-      },
-      {
-        "item": "minecraft:dark_oak_log"
-      },
-      {
-        "item": "minecraft:jungle_log"
-      }
-    ]
+    "m": {
+      "tag": "minecraft:logs"
+    }
   },
   "result": {
     "item": "pumpkinpotions:cauldron"
