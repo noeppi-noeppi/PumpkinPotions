@@ -1,4 +1,6 @@
 {
+  "itemGroup.pumpkinpotions": "Pumpkin Potions",
+
   "block.pumpkinpotions.cauldron": "Pumpkin Cauldron",
 
   "effect.pumpkinpotions.mob_dizziness": "Mob Dizziness",

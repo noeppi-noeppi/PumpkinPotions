@@ -1,4 +1,6 @@
 {
+  "itemGroup.pumpkinpotions": "Pumpkin Potions",
+
   "block.pumpkinpotions.cauldron": "Kürbiskessel",
 
   "effect.pumpkinpotions.mob_dizziness": "Kreaturen-Sehschwäche",
