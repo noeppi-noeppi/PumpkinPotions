@@ -18,7 +18,7 @@ apply plugin: 'maven-publish'
 //apply plugin: 'org.spongepowered.mixin'
 
 
-version = '1.16.3-1.0.2'
+version = '1.16.3-1.0.3'
 group = 'io.github.noeppi_noeppi.mods'
 archivesBaseName = 'PumpkinPotions'
 
@@ -136,7 +136,7 @@ dependencies {
     compileOnly fg.deobf('mezz.jei:jei-1.16.2:7.3.2.27:api')
     runtimeOnly fg.deobf('mezz.jei:jei-1.16.2:7.3.2.27')
 
-    runtimeOnly fg.deobf('de.melanx.recipeprinter:recipeprinter-1.16.3:1.1+5')
+    //runtimeOnly fg.deobf('de.melanx.recipeprinter:recipeprinter-1.16.3:1.1+5')
 }
 
 // Example for how to get properties into the manifest for reading by the runtime..

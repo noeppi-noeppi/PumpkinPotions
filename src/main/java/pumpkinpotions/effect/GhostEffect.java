@@ -37,10 +37,10 @@ public class GhostEffect extends Effect {
         boolean before = player.abilities.allowFlying;
         if (effectActive) {
             player.abilities.allowFlying = true;
-            player.abilities.setFlySpeed(0.01f);
+            player.abilities.flySpeed = 0.01f;
         } else {
             player.abilities.allowFlying = player.isCreative();
-            player.abilities.setFlySpeed(0.05f);
+            player.abilities.flySpeed = 0.05f;
         }
         if (before != player.abilities.allowFlying) {
             player.sendPlayerAbilities();

@@ -14,6 +14,8 @@ import net.minecraft.util.MovementInput;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.world.storage.IWorldInfo;
 import net.minecraft.world.storage.ServerWorldInfo;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.InputUpdateEvent;
 import net.minecraftforge.client.event.RenderLivingEvent;
 import net.minecraftforge.event.TickEvent;
@@ -33,6 +35,7 @@ import java.util.Random;
 public class EventListener {
 
     @SubscribeEvent
+    @OnlyIn(Dist.CLIENT)
     public void renderEntityPre(RenderLivingEvent.Pre<?, ?> event) {
         MatrixStack matrixStack = event.getMatrixStack();
         IRenderTypeBuffer buffer = event.getBuffers();
@@ -47,6 +50,7 @@ public class EventListener {
     }
 
     @SubscribeEvent
+    @OnlyIn(Dist.CLIENT)
     public void renderEntityPost(RenderLivingEvent.Post<?, ?> event) {
         MatrixStack matrixStack = event.getMatrixStack();
         IRenderTypeBuffer buffer = event.getBuffers();
@@ -92,6 +96,7 @@ public class EventListener {
     }
 
     @SubscribeEvent
+    @OnlyIn(Dist.CLIENT)
     public void inputUpdate(InputUpdateEvent event) {
         //noinspection ConstantConditions
         if (Minecraft.getInstance().player.isPotionActive(ModEffects.confusion)) {
